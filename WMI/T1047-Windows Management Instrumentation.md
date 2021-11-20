@@ -23,3 +23,8 @@ event_id:1 AND event_data.CommandLine:(*wmic*process*create*)
 // WMI execution
 event_id:1 AND event_data.Image:(*\\WmiPrvSE\.exe) AND NOT Suppressions
 ```
+
+```
+// Credential Theft using WMI
+event_id:1 AND event_data.CommandLine:(*wmic* AND (*samlib.dll* OR *vaultcli.dll* OR *lsass.exe* ))
+```
